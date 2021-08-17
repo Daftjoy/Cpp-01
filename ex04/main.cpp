@@ -20,7 +20,7 @@ void replace(char **argv)
     std::string out;
     int pos;
     
-    infile.open(argv[1]);
+    infile.open(argv[1], std::ifstream::in);
     if (infile.is_open())
     {
         while(std::getline(infile, line))
@@ -33,11 +33,12 @@ void replace(char **argv)
             out.append(line);
             out.append("\n");
         }
-        out.erase(out.size() - 1, 1);
+        if (out.size() > 0)
+            out.erase(out.size() - 1, 1);
     }
     else
     {
-        std::cout << "Error: file not found" << std::endl;
+        std::cout << "Error: file not found or not enough permissions" << std::endl;
         return;
     }
     infile.close();
