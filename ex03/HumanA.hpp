@@ -18,7 +18,7 @@
 class HumanA
 {
     private:
-        Weapon *_Weapon;
+        Weapon &_Weapon;
         std::string name;
     public:
         HumanA(const char *name, Weapon &Weapon);

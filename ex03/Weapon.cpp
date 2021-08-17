@@ -20,9 +20,9 @@ Weapon::Weapon(const char *type)
 Weapon::~Weapon()
 {}
 
-const std::string *Weapon::getType(void)
+const std::string &Weapon::getType(void)
 {
-    return (&this->type);
+    return (this->type);
 }
 
 void Weapon::setType(const char *type)

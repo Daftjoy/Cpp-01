@@ -13,10 +13,10 @@
 #include "HumanA.hpp"
 
 HumanA::HumanA(const char *name, Weapon &Weapon) :
-_Weapon(&Weapon)
+_Weapon(Weapon)
 {
     this->name = name;
-    this->_Weapon = &Weapon;
+    this->_Weapon = Weapon;
 }
 
 HumanA::~HumanA()
@@ -24,5 +24,5 @@ HumanA::~HumanA()
 
 void HumanA::attack()
 {
-    std::cout << this->name << " attacks with his " << *this->_Weapon->getType() << std::endl;
+    std::cout << this->name << " attacks with his " << this->_Weapon.getType() << std::endl;
 }

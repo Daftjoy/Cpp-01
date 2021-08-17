@@ -27,7 +27,7 @@ class Weapon
     public:
         Weapon(const char *type);
         ~Weapon();
-        const std::string *getType(void);
+        const std::string &getType(void);
         void setType(const char *type);
 };
 

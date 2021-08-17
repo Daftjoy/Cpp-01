@@ -18,7 +18,7 @@ name(name)
 
 Zombie::~Zombie()
 {
-    std::cout << "I'm dying again" << std::endl;
+    std::cout << this->name << " is dying again" << std::endl;
 }
 
 void Zombie::announce(void)
