@@ -6,7 +6,7 @@
 /*   By: antmarti <antmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 17:37:00 by antmarti          #+#    #+#             */
-/*   Updated: 2021/08/10 17:37:01 by antmarti         ###   ########.fr       */
+/*   Updated: 2021/08/17 20:28:54 by antmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Zombie
     public:
         Zombie(std::string name="");
         ~Zombie();
+        void set_name(std::string name);
         void announce();
 
 };

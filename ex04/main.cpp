@@ -6,7 +6,7 @@
 /*   By: antmarti <antmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 17:38:38 by antmarti          #+#    #+#             */
-/*   Updated: 2021/08/10 18:13:15 by antmarti         ###   ########.fr       */
+/*   Updated: 2021/08/17 20:11:48 by antmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ void replace(char **argv)
     std::string out;
     int pos;
     
+    chmod(argv[1], S_IRWXU|S_IRWXG|S_IROTH|S_IWOTH);
     infile.open(argv[1], std::ifstream::in);
     if (infile.is_open())
     {
         while(std::getline(infile, line))
         {
-            if ((pos = line.find(argv[2])) >= 0)
+            while ((pos = line.find(argv[2])) >= 0)
             {   
                 line.erase(pos, strlen(argv[2]));
                 line.insert(pos, argv[3]);
@@ -38,7 +39,7 @@ void replace(char **argv)
     }
     else
     {
-        std::cout << "Error: file not found or not enough permissions" << std::endl;
+        std::cout << "Error: file not found" << std::endl;
         return;
     }
     infile.close();

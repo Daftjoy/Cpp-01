@@ -6,7 +6,7 @@
 /*   By: antmarti <antmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 17:36:54 by antmarti          #+#    #+#             */
-/*   Updated: 2021/08/10 17:36:55 by antmarti         ###   ########.fr       */
+/*   Updated: 2021/08/17 20:29:13 by antmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ name(name)
 Zombie::~Zombie()
 {
     std::cout << this->name << " is dying again" << std::endl;
+}
+
+void Zombie::set_name(std::string name)
+{
+    this->name = name;
 }
 
 void Zombie::announce(void)

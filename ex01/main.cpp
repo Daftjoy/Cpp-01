@@ -6,7 +6,7 @@
 /*   By: antmarti <antmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 17:36:46 by antmarti          #+#    #+#             */
-/*   Updated: 2021/08/10 17:36:47 by antmarti         ###   ########.fr       */
+/*   Updated: 2021/08/17 20:34:27 by antmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int main(void)
     {
         zombies[i].announce();
     }
+    delete [] zombies;
     system("leaks ZombieHorde");
 }
